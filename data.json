@@ -1,0 +1,157 @@
+{
+    "games": [
+        {
+            "game": [
+                {
+                    "study": [
+                        "caesar",
+                        "this is a test"
+                    ],
+                    "hall": [
+                        "caesar",
+                        "this is also a test"
+                    ],
+                    "lounge": [
+                        "caesar",
+                        "yet another test"
+                    ],
+                    "library": [
+                        "caesar",
+                        "testy testy testy test"
+                    ],
+                    "billiardroom": [
+                        "caesar",
+                        "oooooo this is another test"
+                    ],
+                    "diningroom": [
+                        "caesar",
+                        "running out of ways to state a test"
+                    ],
+                    "conservatory": [
+                        "caesar",
+                        "I guess this is also a test or something"
+                    ],
+                    "ballroom": [
+                        "caesar",
+                        "should probably add another test in here"
+                    ],
+                    "kitchen": [
+                        "caesar",
+                        "this is not a test, it is really"
+                    ]
+                },
+                {
+                    "outcome": [
+                        {
+                            "killer": "Col. Mustard",
+                            "weapon": "Candlestick",
+                            "room": "Conservatory"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "game": [
+                {
+                    "study": [
+                        "caesar",
+                        "this is a test"
+                    ],
+                    "hall": [
+                        "caesar",
+                        "this is also a test"
+                    ],
+                    "lounge": [
+                        "caesar",
+                        "yet another test"
+                    ],
+                    "library": [
+                        "caesar",
+                        "testy testy testy test"
+                    ],
+                    "billiardroom": [
+                        "caesar",
+                        "oooooo this is another test"
+                    ],
+                    "diningroom": [
+                        "caesar",
+                        "running out of ways to state a test"
+                    ],
+                    "conservatory": [
+                        "caesar",
+                        "I guess this is also a test or something"
+                    ],
+                    "ballroom": [
+                        "caesar",
+                        "should probably add another test in here"
+                    ],
+                    "kitchen": [
+                        "caesar",
+                        "this is not a test, it is really"
+                    ]
+                },
+                {
+                    "outcome": [
+                        {
+                            "killer": "Col. Mustard",
+                            "weapon": "Candlestick",
+                            "room": "Conservatory"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "game": [
+                {
+                    "study": [
+                        "caesar",
+                        "this is a test"
+                    ],
+                    "hall": [
+                        "caesar",
+                        "this is also a test"
+                    ],
+                    "lounge": [
+                        "caesar",
+                        "yet another test"
+                    ],
+                    "library": [
+                        "caesar",
+                        "testy testy testy test"
+                    ],
+                    "billiardroom": [
+                        "caesar",
+                        "oooooo this is another test"
+                    ],
+                    "diningroom": [
+                        "caesar",
+                        "running out of ways to state a test"
+                    ],
+                    "conservatory": [
+                        "caesar",
+                        "I guess this is also a test or something"
+                    ],
+                    "ballroom": [
+                        "caesar",
+                        "should probably add another test in here"
+                    ],
+                    "kitchen": [
+                        "caesar",
+                        "this is not a test, it is really"
+                    ]
+                },
+                {
+                    "outcome": [
+                        {
+                            "killer": "Col. Mustard",
+                            "weapon": "Candlestick",
+                            "room": "Conservatory"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

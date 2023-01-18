@@ -1,0 +1,336 @@
+body {
+    background-image: url('../images/board.jpg');
+    background-repeat: no-repeat;
+    background-size: 75% 100%;
+    height: 100vh;
+    background-position: center;
+}
+
+#parent {
+    /* border: solid 5px black; */
+    height: 100vh;
+    margin: 0 12% 0 12%;
+}
+
+#overlay {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: #FF6766;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#ciphertext {
+    font-size: xx-large;
+}
+
+#visitedrooms {
+    display: none;
+}
+
+#roomlist {
+    text-align: left;
+}
+
+#controls {
+    position: absolute;
+    background-color: #FF6766;
+    width: 11%;
+    text-align: center;
+}
+
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .anim-btn {
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .anim-btn span {
+    transition: all 0.3s;
+  }
+  .anim-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+  }
+  .anim-btn:hover span {
+    letter-spacing: 2px;
+  }
+  .anim-btn:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+  }
+  .anim-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.1);
+  }
+  .anim-btn:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+  }
+
+#study {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 5%;
+    left: 21%;
+    height: 14%;
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hall {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 5%;
+    left: 43%;
+    height: 24%;
+    width: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lounge {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 5%;
+    left: 62%;
+    height: 21%;
+    width: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#library {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 27%;
+    left: 21%;
+    height: 17%;
+    width: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards {
+    /* border: solid 5px green; */
+    position: absolute;
+    top: 34%;
+    left: 43%;
+    height: 25%;
+    width: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#diningroom {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 38%;
+    left: 60%;
+    height: 24%;
+    width: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#billiardroom {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 49%;
+    left: 21%;
+    height: 17%;
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#conservatory {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 74%;
+    left: 21%;
+    height: 19%;
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ballroom {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 67%;
+    left: 40%;
+    height: 28%;
+    width: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#kitchen {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 71%;
+    left: 64%;
+    height: 22%;
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pigpen-wrapper {
+    display: inline-block;
+    background: white;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dotted {
+    background: black;
+    -webkit-box-shadow: inset 0px 0px 0px 23px rgba(255, 255, 255, 1);
+    -moz-box-shadow: inset 0px 0px 0px 23px rgba(255, 255, 255, 1);
+    box-shadow: inset -2px 0px 0px 23px rgba(255, 255, 255, 1);
+}
+
+.pigpen {
+    display: inline-block;
+    background: transparent;
+    width: 10px;
+    height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 4px solid white;
+}
+
+.a,
+.j {
+    border-color: white black black white;
+}
+
+.b,
+.k {
+    border-color: white black black black;
+}
+
+.c,
+.l {
+    border-color: white white black black;
+}
+
+.d,
+.m {
+    border-color: black black black white;
+}
+
+.e,
+.n {
+    border-color: black black black black;
+}
+
+.f,
+.o {
+    border-color: black white black black;
+}
+
+.g,
+.p {
+    border-color: black black white white;
+}
+
+.h,
+.q {
+    border-color: black black white black;
+}
+
+.i,
+.r {
+    border-color: black white white black;
+}
+
+.s {
+    border-color: white black black white;
+    transform: translate(0px, -6px) rotate(45deg);
+}
+
+.u {
+    border-color: white white black black;
+    transform: translate(6px, 0px) rotate(45deg);
+}
+
+.t {
+    border-color: black black white white;
+    transform: translate(-6px, 0px) rotate(45deg);
+}
+
+.v {
+    border-color: black white white black;
+    transform: translate(0px, 6px) rotate(45deg);
+}
+
+
+.w {
+    border-color: white black black white;
+    transform: translate(0px, -6px) rotate(45deg);
+}
+
+.y {
+    border-color: white white black black;
+    transform: translate(6px, 0px) rotate(45deg);
+}
+
+.x {
+    border-color: black black white white;
+    transform: translate(-6px, 0px) rotate(45deg);
+}
+
+.z {
+    border-color: black white white black;
+    transform: translate(0px, 6px) rotate(45deg);
+}

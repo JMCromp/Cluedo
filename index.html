@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Cluedo</title>
+</head>
+
+<body>
+    <div id="controls">
+        <div class="btn anim-btn">
+            <span>NEXT MOVE</span>
+        </div>
+        <div id="visitedrooms">
+            <p>Visited rooms:</p>
+            <ol id="roomlist">
+            </ol>
+            <form>
+                <input type=>
+            </form>
+        </div>
+
+    </div>
+    <div id="overlay">
+        <p id="ciphertext"></p>
+    </div>
+    <div id="parent">
+        <div id="study" class="child"></div> 
+        <div id="hall" class="child"></div>
+        <div id="lounge" class="child"></div>
+        <div id="library" class="child"></div>
+        <div id="cards" class="child"></div>
+        <div id="diningroom" class="child"></div>
+        <div id="billiardroom" class="child"></div>
+        <div id="conservatory" class="child"></div>
+        <div id="ballroom" class="child"></div>
+        <div id="kitchen" class="child"></div>
+    </div>
+
+    <input type="text" id="plaintext" style="width: 60%">&nbsp;<button id="pigpentest">encode</button>
+    <div id=ciphertext style="min-height:60px;"></div>
+
+    <script src="./scripts/script.js" type="module"></script>
+</body>
+
+</html>
