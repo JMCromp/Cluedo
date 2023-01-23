@@ -53,6 +53,23 @@ function drawPlayer() {
 
 drawPlayer();
 
+let clueCache = [];
+
+function recallClue(element) {
+        // recall clue from clueCache
+        for (let i = 0; i < clueCache.length; i++) { 
+            if (clueCache[i][0] == element.srcElement.innerText) {
+                cipertext.textContent = clueCache[i][1];
+                console.log(clueCache)
+            }
+        }
+        // show clue box and add close
+        overlay.style.display = "flex";
+        overlay.addEventListener("click", () => {
+            overlay.style.display = "none";
+        });
+}
+
 function showClue() {
     if (!currentGame) {
         // roll and select which game to play - calc from total listed games in data.json
@@ -64,6 +81,10 @@ function showClue() {
     // check for required cipher
     if (data.games[currentGame].game[0][roomID][0] == "caesar") {
         cipertext.textContent = caesar(data.games[currentGame].game[0][roomID][1], 13);
+        // push clue to clueCache for later recall
+        let temp = [currentRoom.id, cipertext.textContent];
+        // let temp = {"room": currentRoom.id, "clue": cipertext.textContent};
+        clueCache.push(temp);
     }
     
     // show clue box and add close
@@ -76,8 +97,24 @@ function showClue() {
     let newRoom = document.createElement('li');
     newRoom.innerText = currentRoom.id;
     roomlist.appendChild(newRoom);
+
+    // add event listener to each li when created, allows user to click each 'room' to revisit a clue
+    newRoom.addEventListener("click", (element) => {
+        recallClue(element);
+    });
+    // // temp hover effect for clickable elements
+    // newRoom.addEventListener("mouseover", () => {
+    //     newRoom.textContent = newRoom.textContent.toUpperCase();
+    //     newRoom.style.fontWeight = 1000;
+    // });
+    // newRoom.addEventListener("mouseout", () => {
+    //     newRoom.textContent = newRoom.textContent.toLowerCase();
+    //     newRoom.style.fontWeight = 200;
+    // });
     visitedrooms.style.display = "block";
 }
+
+
 
 movebtn.addEventListener("click", () => {
     if (roomArray.length >= 1) {

@@ -38,6 +38,19 @@ body {
     text-align: left;
 }
 
+#roomlist li {
+    padding: 5px;
+}
+
+#roomlist li:hover {
+    font-weight: 1000;
+    font-size: larger;
+}
+
+#visitedrooms p {
+    font-weight: 1000;
+}
+
 #controls {
     position: absolute;
     background-color: #FF6766;
