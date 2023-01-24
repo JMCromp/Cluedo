@@ -46,7 +46,7 @@ function drawPlayer() {
 
     let playerIcon = document.createElement('img');
     playerIcon.className = 'playerIcon';
-    playerIcon.src = '../images/piece.png';
+    playerIcon.src = './images/piece.png';
     playerIcon.style.width = '3vw';
     currentRoom.appendChild(playerIcon);
 }
