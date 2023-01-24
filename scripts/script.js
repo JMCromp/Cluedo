@@ -2,7 +2,7 @@
 import { caesar, pigpen } from "./encode.js"
 // fetch data from json, store as 'data'
 let data;
-fetch("../data.json")
+fetch("data.json")
     .then(response => {
         return response.json();
     })
