@@ -24,8 +24,13 @@ let cipertext = document.getElementById("ciphertext");
 let overlay = document.getElementById("overlay");
 let visitedrooms = document.getElementById("visitedrooms");
 let roomlist = document.getElementById("roomlist");
+let ciphersolution = document.getElementById("ciphersolution");
+let correct = document.getElementById("correct");
+let incorrect = document.getElementById("incorrect");
+let closebtn = document.getElementById("closebtn");
 
 let pigpentest = document.getElementById("pigpentest");
+overlay.style.display = "none";
 
 // initially roll a random between 0-8, number represents starting room - 0 to account for zero-indexing
 let startingRandom = Math.floor(Math.random() * 9);
@@ -33,6 +38,9 @@ let roomArray = [study, hall, lounge, library, billiardroom, diningroom, conserv
 let startingRoom = roomArray[startingRandom];
 let currentRoom = startingRoom;
 let currentGame;
+let solvedClues = [];
+let activeRoom = "";
+let clueCache = [];
 // remove used room
 roomArray.splice(startingRandom, 1);
 
@@ -53,31 +61,65 @@ function drawPlayer() {
 
 drawPlayer();
 
-let clueCache = [];
+// on click check if cipher solution is correct
+ciphersolution.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        correct.style.display = "none";
+        incorrect.style.display = "none";
+        // check if entered value matches original clue from data.json
+        if(ciphersolution.value == data.games[currentGame].game[0][activeRoom][1]) {
+            correct.style.display = "block";
+            solvedClues.push(activeRoom);
+        } else {
+            incorrect.style.display = "block";
+        }
+    }
+    console.log(clueCache);
+    console.log(solvedClues);
+});
+
+function resetElements() {
+    ciphersolution.readOnly = false;
+    correct.style.display = "none";
+    incorrect.style.display = "none";
+    ciphersolution.value = "";
+}
 
 function recallClue(element) {
         // recall clue from clueCache
+        resetElements();
+        activeRoom = element.srcElement.innerText;
         for (let i = 0; i < clueCache.length; i++) { 
-            if (clueCache[i][0] == element.srcElement.innerText) {
+            if (clueCache[i][0] == activeRoom) {
                 cipertext.textContent = clueCache[i][1];
-                console.log(clueCache)
+                for (let i = 0; i < solvedClues.length; i++) {
+                    if (solvedClues[i] == element.srcElement.innerText) {
+                        // show solved message
+                        ciphersolution.value = data.games[currentGame].game[0][activeRoom][1];
+                        ciphersolution.readOnly = true;
+                        correct.style.display = "block";
+                    }
+                }
             }
         }
         // show clue box and add close
         overlay.style.display = "flex";
-        overlay.addEventListener("click", () => {
+        closebtn.addEventListener("click", () => {
             overlay.style.display = "none";
+            correct.style.display = "none";
+            incorrect.style.display = "none";
         });
 }
 
 function showClue() {
+    resetElements();
     if (!currentGame) {
         // roll and select which game to play - calc from total listed games in data.json
         currentGame = Math.floor(Math.random() * data.games.length);
     }
     // get current roomID from parent ID attribute of player icon
     let roomID = document.getElementsByClassName('playerIcon')[0].parentElement.id;
-
+    activeRoom = roomID;
     // check for required cipher
     if (data.games[currentGame].game[0][roomID][0] == "caesar") {
         cipertext.textContent = caesar(data.games[currentGame].game[0][roomID][1], 13);
@@ -89,8 +131,10 @@ function showClue() {
     
     // show clue box and add close
     overlay.style.display = "flex";
-    overlay.addEventListener("click", () => {
+    closebtn.addEventListener("click", () => {
         overlay.style.display = "none";
+        correct.style.display = "none";
+        incorrect.style.display = "none";
     });
 
     // add new element to visitedrooms list and display list
@@ -102,15 +146,7 @@ function showClue() {
     newRoom.addEventListener("click", (element) => {
         recallClue(element);
     });
-    // // temp hover effect for clickable elements
-    // newRoom.addEventListener("mouseover", () => {
-    //     newRoom.textContent = newRoom.textContent.toUpperCase();
-    //     newRoom.style.fontWeight = 1000;
-    // });
-    // newRoom.addEventListener("mouseout", () => {
-    //     newRoom.textContent = newRoom.textContent.toLowerCase();
-    //     newRoom.style.fontWeight = 200;
-    // });
+
     visitedrooms.style.display = "block";
 }
 
@@ -138,7 +174,7 @@ movebtn.addEventListener("click", () => {
 
 
 
-console.log(caesar("testing", 11))
+// console.log(caesar("testing", 11))
 pigpentest.addEventListener("click", () => {
     pigpen();
 })

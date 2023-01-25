@@ -24,6 +24,37 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#overlay input {
+    width: 50%;
+}
+
+#correct {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 15px 15px 15px;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    display: none;
+}
+
+#incorrect {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 15px 15px 15px;
+    color: #8a1010;
+    background-color: #f2bfbf;
+    display: none;
+}
+
+#closebtn {
+    position: absolute;
+    width: 25%;
+    height: 8%;
+    bottom: 10px;
 }
 
 #ciphertext {
