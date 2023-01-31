@@ -1,5 +1,5 @@
 // import ciphers
-import { caesar, pigpen } from "./encode.js"
+import { caesar, pigpen, vigenere } from "./encode.js"
 // fetch data from json, store as 'data'
 let data;
 fetch("data.json")
@@ -28,6 +28,13 @@ let ciphersolution = document.getElementById("ciphersolution");
 let correct = document.getElementById("correct");
 let incorrect = document.getElementById("incorrect");
 let closebtn = document.getElementById("closebtn");
+let outcome = document.getElementById("outcome");
+let outcomesubmit = document.getElementById("outcomesubmit");
+let whodoneit = document.getElementById("whodoneit");
+let withwhat = document.getElementById("withwhat");
+let wherewasit = document.getElementById("wherewasit");
+let colouroptions = document.getElementById("colouroptions");
+let optionssubmit = document.getElementById("optionssubmit");
 
 let pigpentest = document.getElementById("pigpentest");
 overlay.style.display = "none";
@@ -54,12 +61,33 @@ function drawPlayer() {
 
     let playerIcon = document.createElement('img');
     playerIcon.className = 'playerIcon';
-    playerIcon.src = './images/piece.png';
-    playerIcon.style.width = '3vw';
+    playerIcon.src = './images/piece2.png';
+    playerIcon.style.width = '4vw';
     currentRoom.appendChild(playerIcon);
 }
 
 drawPlayer();
+
+// // change player colour
+// // disabled because Steff is boring
+// optionssubmit.addEventListener("click", () => {
+//     let val = 0;
+//     if (colouroptions.value == "orange") {
+//         val = 0;
+//     } else if (colouroptions.value == "green") {
+//         val = 100;
+//     } else if (colouroptions.value == "blue") {
+//         val = 200;
+//     } else if (colouroptions.value == "pink") {
+//         val = 300;
+//     } else if (colouroptions.value == "purple") {
+//         val = 250;
+//     } else if (colouroptions.value == "red") {
+//         val = 334;
+//     }
+    
+//     document.getElementsByClassName('playerIcon')[0].style.filter = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(" + val + "deg)";
+// });
 
 // on click check if cipher solution is correct
 ciphersolution.addEventListener("keypress", (e) => {
@@ -74,8 +102,7 @@ ciphersolution.addEventListener("keypress", (e) => {
             incorrect.style.display = "block";
         }
     }
-    console.log(clueCache);
-    console.log(solvedClues);
+
 });
 
 function resetElements() {
@@ -120,14 +147,23 @@ function showClue() {
     // get current roomID from parent ID attribute of player icon
     let roomID = document.getElementsByClassName('playerIcon')[0].parentElement.id;
     activeRoom = roomID;
+
     // check for required cipher
     if (data.games[currentGame].game[0][roomID][0] == "caesar") {
+        // syntax: caesar(string, rotation)
         cipertext.textContent = caesar(data.games[currentGame].game[0][roomID][1], 13);
-        // push clue to clueCache for later recall
-        let temp = [currentRoom.id, cipertext.textContent];
-        // let temp = {"room": currentRoom.id, "clue": cipertext.textContent};
-        clueCache.push(temp);
+    } else if (data.games[currentGame].game[0][roomID][0] == "vigenere") {
+        // syntax: vigenere.doCrypt(isDecrypt, theKey, theClue)
+        cipertext.textContent = vigenere.doCrypt(false, "codenation", data.games[currentGame].game[0][roomID][1]);
+    } else if (data.games[currentGame].game[0][roomID][0] == "custom") {
+        // accomodation for custom ciphers
+        cipertext.textContent = data.games[currentGame].game[0][roomID][2];
     }
+
+    // push clue to clueCache for later recall
+    let temp = [currentRoom.id, cipertext.textContent];
+    // let temp = {"room": currentRoom.id, "clue": cipertext.textContent};
+    clueCache.push(temp);
     
     // show clue box and add close
     overlay.style.display = "flex";
@@ -160,7 +196,24 @@ movebtn.addEventListener("click", () => {
         drawPlayer();
         showClue();
     } else {
-        alert("no more moves");
+        outcome.style.display = "flex";
+        outcomesubmit.addEventListener("click", () => {
+            if (whodoneit.value == data.games[currentGame].game[1].outcome[0].killer && withwhat.value == data.games[currentGame].game[1].outcome[0].weapon && wherewasit.value == data.games[currentGame].game[1].outcome[0].room) {
+                overlay.style.display = "flex";
+                cipertext.textContent = "You got 'um... Nice job, detective."
+                ciphersolution.style.display = "none";
+                closebtn.textContent = "Play again";
+                closebtn.addEventListener("click", () => {
+                    location.reload();
+                });
+            }
+            // console.log(whodoneit.value);
+            // console.log(withwhat.value);
+            // console.log(wherewasit.value);
+            // console.log(data.games[currentGame].game[1].outcome[0].killer);
+            // console.log(data.games[currentGame].game[1].outcome[0].weapon);
+            // console.log(data.games[currentGame].game[1].outcome[0].room);
+        });
     }
 })
 
@@ -174,10 +227,10 @@ movebtn.addEventListener("click", () => {
 
 
 
-// console.log(caesar("testing", 11))
-pigpentest.addEventListener("click", () => {
-    pigpen();
-})
+// // console.log(caesar("testing", 11))
+// pigpentest.addEventListener("click", () => {
+//     pigpen();
+// })
 
 
 // study.addEventListener("click", () => {

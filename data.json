@@ -4,48 +4,49 @@
             "game": [
                 {
                     "study": [
-                        "caesar",
-                        "this is a test"
+                        "custom",
+                        "this is the plaintext",
+                        ">⊓｢v ｢v >⊓□ ⸅⦝⅃｢⊡>□⋗>"
                     ],
                     "hall": [
-                        "caesar",
+                        "vigenere",
                         "this is also a test"
                     ],
                     "lounge": [
-                        "caesar",
+                        "vigenere",
                         "yet another test"
                     ],
                     "library": [
-                        "caesar",
+                        "vigenere",
                         "testy testy testy test"
                     ],
                     "billiardroom": [
-                        "caesar",
+                        "vigenere",
                         "oooooo this is another test"
                     ],
                     "diningroom": [
-                        "caesar",
+                        "vigenere",
                         "running out of ways to state a test"
                     ],
                     "conservatory": [
-                        "caesar",
+                        "vigenere",
                         "I guess this is also a test or something"
                     ],
                     "ballroom": [
-                        "caesar",
+                        "vigenere",
                         "should probably add another test in here"
                     ],
                     "kitchen": [
-                        "caesar",
+                        "vigenere",
                         "this is not a test, it is really"
                     ]
                 },
                 {
                     "outcome": [
                         {
-                            "killer": "Col. Mustard",
-                            "weapon": "Candlestick",
-                            "room": "Conservatory"
+                            "killer": "mustard",
+                            "weapon": "candlestick",
+                            "room": "conservatory"
                         }
                     ]
                 }
@@ -55,48 +56,49 @@
             "game": [
                 {
                     "study": [
-                        "caesar",
-                        "this is a test"
+                        "custom",
+                        "this is the plaintext",
+                        ">⊓｢v ｢v >⊓□ ⸅⦝⅃｢⊡>□⋗>"
                     ],
                     "hall": [
-                        "caesar",
+                        "vigenere",
                         "this is also a test"
                     ],
                     "lounge": [
-                        "caesar",
+                        "vigenere",
                         "yet another test"
                     ],
                     "library": [
-                        "caesar",
+                        "vigenere",
                         "testy testy testy test"
                     ],
                     "billiardroom": [
-                        "caesar",
+                        "vigenere",
                         "oooooo this is another test"
                     ],
                     "diningroom": [
-                        "caesar",
+                        "vigenere",
                         "running out of ways to state a test"
                     ],
                     "conservatory": [
-                        "caesar",
+                        "vigenere",
                         "I guess this is also a test or something"
                     ],
                     "ballroom": [
-                        "caesar",
+                        "vigenere",
                         "should probably add another test in here"
                     ],
                     "kitchen": [
-                        "caesar",
+                        "vigenere",
                         "this is not a test, it is really"
                     ]
                 },
                 {
                     "outcome": [
                         {
-                            "killer": "Col. Mustard",
-                            "weapon": "Candlestick",
-                            "room": "Conservatory"
+                            "killer": "mustard",
+                            "weapon": "candlestick",
+                            "room": "conservatory"
                         }
                     ]
                 }
@@ -106,48 +108,49 @@
             "game": [
                 {
                     "study": [
-                        "caesar",
-                        "this is a test"
+                        "custom",
+                        "this is the plaintext",
+                        ">⊓｢v ｢v >⊓□ ⸅⦝⅃｢⊡>□⋗>"
                     ],
                     "hall": [
-                        "caesar",
+                        "vigenere",
                         "this is also a test"
                     ],
                     "lounge": [
-                        "caesar",
+                        "vigenere",
                         "yet another test"
                     ],
                     "library": [
-                        "caesar",
+                        "vigenere",
                         "testy testy testy test"
                     ],
                     "billiardroom": [
-                        "caesar",
+                        "vigenere",
                         "oooooo this is another test"
                     ],
                     "diningroom": [
-                        "caesar",
+                        "vigenere",
                         "running out of ways to state a test"
                     ],
                     "conservatory": [
-                        "caesar",
+                        "vigenere",
                         "I guess this is also a test or something"
                     ],
                     "ballroom": [
-                        "caesar",
+                        "vigenere",
                         "should probably add another test in here"
                     ],
                     "kitchen": [
-                        "caesar",
+                        "vigenere",
                         "this is not a test, it is really"
                     ]
                 },
                 {
                     "outcome": [
                         {
-                            "killer": "Col. Mustard",
-                            "weapon": "Candlestick",
-                            "room": "Conservatory"
+                            "killer": "mustard",
+                            "weapon": "candlestick",
+                            "room": "conservatory"
                         }
                     ]
                 }
