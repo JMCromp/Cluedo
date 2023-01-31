@@ -11,6 +11,14 @@
     background-position: center;
 }
 
+/* #boardimage {
+    position: absolute;
+    left: 25%;
+    top: 14%;
+    width: 50%;
+    height: 75%;
+} */
+
 #cnlogo {
     width: 100%;
     margin-bottom: 15px;
@@ -178,6 +186,8 @@
       -webkit-text-fill-color: transparent;
       transition: all 0.3s ease-in-out;
       font-size: medium;
+      margin-left: -20px;
+      text-align: left;
 }
 
 #roomlist li::before {
@@ -566,4 +576,262 @@
 .z {
     border-color: black white white black;
     transform: translate(0px, 6px) rotate(45deg);
+}
+
+@media (max-width: 576px) {
+    #visitedrooms p {
+        font-size: 8px;
+    }
+
+    #roomlist li {
+        font-size: 8px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 8px;
+    }
+
+    #outcome select {
+        font-size: 6px;
+    }
+
+    #outcome button {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 14px;
+    }
+
+    #overlay button {
+        font-size: 8px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 8px;
+    }
+
+    #incorrect, #correct {
+        font-size: 6px;
+    }
+
+    #cnlogo {
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    #visitedrooms p {
+        font-size: 10px;
+    }
+
+    #roomlist li {
+        font-size: 8px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 10px;
+    }
+
+    #outcome select {
+        font-size: 6px;
+    }
+
+    #outcome button {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 16px;
+    }
+
+    #overlay button {
+        font-size: 8px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 8px;
+    }
+
+    #incorrect, #correct {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 768px) { 
+    #visitedrooms p {
+        font-size: 10px;
+    }
+
+    #roomlist li {
+        font-size: 8px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 10px;
+    }
+
+    #outcome select {
+        font-size: 8px;
+    }
+
+    #outcome button {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 18px;
+    }
+
+    #overlay button {
+        font-size: 10px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 8px;
+    }
+
+    #incorrect, #correct {
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 992px) {
+    #visitedrooms p {
+        font-size: 12px;
+    }
+
+    #roomlist li {
+        font-size: 10px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 12px;
+    }
+
+    #outcome select {
+        font-size: 8px;
+    }
+
+    #outcome button {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 20px;
+    }
+
+    #overlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 10px;
+    }
+
+    #incorrect, #correct {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #visitedrooms p {
+        font-size: 12px;
+    }
+
+    #roomlist li {
+        font-size: 10px;
+        margin-left: -20px;
+        text-align: left;
+    }
+    .anim-btn {
+        font-size: 14px;
+    }
+
+    #outcome select {
+        font-size: 8px;
+    }
+
+    #outcome button {
+        font-size: 10px;
+        width: 70%;
+    }
+
+    #overlay p {
+        font-size: 22px;
+    }
+
+    #overlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 10px;
+    }
+
+    #incorrect, #correct {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #visitedrooms p {
+        font-size: 14px;
+    }
+
+    #roomlist li {
+        font-size: 12px;
+        margin-left: -20px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 16px;
+    }
+
+    #outcome select {
+        font-size: 10px;
+    }
+
+    #outcome button {
+        font-size: 12px;
+        width: 60%;
+    }
+
+    #overlay p {
+        font-size: 24px;
+    }
+
+    #overlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 12px;
+    }
+
+    #incorrect, #correct {
+        font-size: 10px;
+    }
 }
