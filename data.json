@@ -5,47 +5,48 @@
                 {
                     "study": [
                         "custom",
-                        "this is the plaintext",
-                        ">⊓｢v ｢v >⊓□ ⸅⦝⅃｢⊡>□⋗>"
+                        "the culprit is male",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ｢v ⟄⅃⦝□"
                     ],
                     "hall": [
-                        "vigenere",
-                        "this is also a test"
+                        "custom",
+                        "the culprit has a moustache",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ⊓⅃v ⅃ ⟄⟃<v>⅃⌞⊓□"
                     ],
                     "lounge": [
                         "vigenere",
-                        "yet another test"
+                        "the weapon is not too heavy"
                     ],
                     "library": [
                         "vigenere",
-                        "testy testy testy test"
+                        "the room was quite well lit"
                     ],
                     "billiardroom": [
                         "vigenere",
-                        "oooooo this is another test"
+                        "the weapon has multiple uses"
                     ],
                     "diningroom": [
-                        "vigenere",
-                        "running out of ways to state a test"
+                        "caesar",
+                        "the weapon is not sharp"
                     ],
                     "conservatory": [
-                        "vigenere",
-                        "I guess this is also a test or something"
+                        "caesar",
+                        "a tie was found as the scene of the crime"
                     ],
                     "ballroom": [
                         "vigenere",
-                        "should probably add another test in here"
+                        "the crime scene used to be great for relaxing, but not anymore"
                     ],
                     "kitchen": [
-                        "vigenere",
-                        "this is not a test, it is really"
+                        "caesar",
+                        "the crime scene has a passage"
                     ]
                 },
                 {
                     "outcome": [
                         {
-                            "killer": "mustard",
-                            "weapon": "candlestick",
+                            "killer": "plum",
+                            "weapon": "rope",
                             "room": "conservatory"
                         }
                     ]
@@ -57,48 +58,50 @@
                 {
                     "study": [
                         "custom",
-                        "this is the plaintext",
-                        ">⊓｢v ｢v >⊓□ ⸅⦝⅃｢⊡>□⋗>"
+                        "the culprit is female",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ｢v ⊏□⟄⅃⦝□"
                     ],
                     "hall": [
-                        "vigenere",
-                        "this is also a test"
+                        "custom",
+                        "an earring was found at the scene",
+                        "⅃⊡ □⅃⟔⟔｢⊡ꓶ ⟇⅃v ⊏⟃<⊡⊐ ⅃> >⊓□ v⌞□⊡□"
                     ],
                     "lounge": [
-                        "vigenere",
-                        "yet another test"
+                        "custom",
+                        "a glass with a lipstick stain was found",
+                        "⅃ ꓶ⦝⅃vv ⟇｢>⊓ ⅃ ⦝｢⸅v>｢⌞⊍ v>⅃｢⊡ ⟇⅃v ⊏⟃<⊡⊐"
                     ],
                     "library": [
                         "vigenere",
-                        "testy testy testy test"
+                        "the crime scene has a passage"
                     ],
                     "billiardroom": [
-                        "vigenere",
-                        "oooooo this is another test"
+                        "caesar",
+                        "the crime scene is not a communal space"
                     ],
                     "diningroom": [
                         "vigenere",
-                        "running out of ways to state a test"
+                        "the weapon is quite heavy"
                     ],
                     "conservatory": [
-                        "vigenere",
-                        "I guess this is also a test or something"
+                        "caesar",
+                        "the weapon shines in the light"
                     ],
                     "ballroom": [
                         "vigenere",
-                        "should probably add another test in here"
+                        "a circular mark was left behind by the weapon"
                     ],
                     "kitchen": [
-                        "vigenere",
-                        "this is not a test, it is really"
+                        "caesar",
+                        "the scene of the crime is quite warm"
                     ]
                 },
                 {
                     "outcome": [
                         {
-                            "killer": "mustard",
+                            "killer": "scarlett",
                             "weapon": "candlestick",
-                            "room": "conservatory"
+                            "room": "library"
                         }
                     ]
                 }
@@ -109,48 +112,49 @@
                 {
                     "study": [
                         "custom",
-                        "this is the plaintext",
-                        ">⊓｢v ｢v >⊓□ ⸅⦝⅃｢⊡>□⋗>"
+                        "the culprit is male",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ｢v ⟄⅃⦝□"
                     ],
                     "hall": [
-                        "vigenere",
-                        "this is also a test"
+                        "custom",
+                        "the culprit has no facial hair",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ⊓⅃v ⊡⟃ ⊏⅃⌞｢⅃⦝ ⊓⅃｢⟔"
                     ],
                     "lounge": [
                         "vigenere",
-                        "yet another test"
+                        "the weapon is quite heavy"
                     ],
                     "library": [
                         "vigenere",
-                        "testy testy testy test"
+                        "residue was left behind by the weapon"
                     ],
                     "billiardroom": [
-                        "vigenere",
-                        "oooooo this is another test"
+                        "caesar",
+                        "the crime scene is a communal space"
                     ],
                     "diningroom": [
-                        "vigenere",
-                        "running out of ways to state a test"
+                        "caesar",
+                        "the crime scene does not have a passage"
                     ],
                     "conservatory": [
                         "vigenere",
-                        "I guess this is also a test or something"
+                        "the crime scene is a large room"
                     ],
                     "ballroom": [
                         "vigenere",
-                        "should probably add another test in here"
+                        "a loud noise was heard as the time of the murder"
                     ],
                     "kitchen": [
-                        "vigenere",
-                        "this is not a test, it is really"
+                        "caesar",
+                        "many chairs were knocked over at the time of the murder"
                     ]
                 },
                 {
                     "outcome": [
                         {
-                            "killer": "mustard",
-                            "weapon": "candlestick",
-                            "room": "conservatory"
+                            "killer": "green",
+                            "weapon": "revolver",
+                            "room": "diningroom"
                         }
                     ]
                 }
