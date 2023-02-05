@@ -45,6 +45,10 @@
     backface-visibility: hidden;
 }
 
+#backoverlay p {
+    padding: 0 50px 0 50px;
+}
+
 .fade-in {
     animation: fadeIn 1s;
 }
@@ -716,6 +720,16 @@
     #cnlogo {
         width: 100%;
     }
+
+    .bop {
+        font-size: 6px;
+        overflow: hidden;
+    }
+
+    #backheading {
+        font-size: 12px;
+        font-weight: 1000;
+    }
 }
 
 @media (min-width: 576px) {
@@ -775,6 +789,16 @@
 
     #incorrect, #correct {
         font-size: 8px;
+    }
+
+    .bop {
+        font-size: 6px;
+        overflow: hidden;
+    }
+
+    #backheading {
+        font-size: 14px;
+        font-weight: 1000;
     }
 }
 
@@ -836,6 +860,16 @@
     #incorrect, #correct {
         font-size: 8px;
     }
+
+    .bop {
+        font-size: 10px;
+        overflow: hidden;
+    }
+
+    #backheading {
+        font-size: 16px;
+        font-weight: 1000;
+    }
 }
 
 @media (min-width: 992px) {
@@ -895,6 +929,15 @@
     #incorrect, #correct {
         font-size: 10px;
     }
+
+    .bop {
+        font-size: 10px;
+    }
+
+    #backheading {
+        font-size: 18px;
+        font-weight: 1000;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -952,6 +995,14 @@
 
     #incorrect, #correct {
         font-size: 10px;
+    }
+
+    .bop {
+        font-size: 12px;
+    }
+
+    #backheading {
+        font-size: 20px;
     }
 }
 
@@ -1011,5 +1062,14 @@
 
     #incorrect, #correct {
         font-size: 10px;
+    }
+
+    .bop {
+        font-size: 14px;
+    }
+
+    #backheading {
+        font-size: 20px;
+        font-weight: 1000;
     }
 }

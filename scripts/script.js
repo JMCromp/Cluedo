@@ -227,7 +227,7 @@ cards.addEventListener("click", () => {
         board.style.display = "none";
         controls.style.display = "none";
         controlsright.style.display = "none";
-      }, 900);
+      }, 800);
     setTimeout(function () {
         boardback.style.display = "block";
         boardback.className = "fade-in";
@@ -245,7 +245,7 @@ backclose.addEventListener("click", () => {
         controls.style.display = "flex";
         controlsright.style.display = "flex";
         board.style.transform = "none";
-      }, 400);
+      }, 300);
     setTimeout(function () {
         boardback.style.display = "none";
       }, 400);
