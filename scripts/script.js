@@ -9,6 +9,7 @@ fetch("data.json")
     .then(temp => data = temp);
 
 // element references
+let board = document.getElementById("board");
 let study = document.getElementById("study");
 let hall = document.getElementById("hall");
 let lounge = document.getElementById("lounge");
@@ -35,6 +36,11 @@ let withwhat = document.getElementById("withwhat");
 let wherewasit = document.getElementById("wherewasit");
 let colouroptions = document.getElementById("colouroptions");
 let optionssubmit = document.getElementById("optionssubmit");
+let resizebtn = document.getElementById("resizebtn");
+let controls = document.getElementById("controls");
+let controlsright = document.getElementById("controlsright");
+let boardback = document.getElementById("boardback");
+let backclose = document.getElementById("backclose");
 
 let pigpentest = document.getElementById("pigpentest");
 overlay.style.display = "none";
@@ -68,26 +74,26 @@ function drawPlayer() {
 
 drawPlayer();
 
-// // change player colour
-// // disabled because Steff is boring
-// optionssubmit.addEventListener("click", () => {
-//     let val = 0;
-//     if (colouroptions.value == "orange") {
-//         val = 0;
-//     } else if (colouroptions.value == "green") {
-//         val = 100;
-//     } else if (colouroptions.value == "blue") {
-//         val = 200;
-//     } else if (colouroptions.value == "pink") {
-//         val = 300;
-//     } else if (colouroptions.value == "purple") {
-//         val = 250;
-//     } else if (colouroptions.value == "red") {
-//         val = 334;
-//     }
+// change player colour
+// disabled because Steff is boring
+optionssubmit.addEventListener("click", () => {
+    let val = 0;
+    if (colouroptions.value == "orange") {
+        val = 0;
+    } else if (colouroptions.value == "green") {
+        val = 100;
+    } else if (colouroptions.value == "blue") {
+        val = 200;
+    } else if (colouroptions.value == "pink") {
+        val = 300;
+    } else if (colouroptions.value == "purple") {
+        val = 250;
+    } else if (colouroptions.value == "red") {
+        val = 334;
+    }
     
-//     document.getElementsByClassName('playerIcon')[0].style.filter = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(" + val + "deg)";
-// });
+    document.getElementsByClassName('playerIcon')[0].style.filter = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(" + val + "deg)";
+});
 
 // on click check if cipher solution is correct
 ciphersolution.addEventListener("keypress", (e) => {
@@ -207,68 +213,49 @@ movebtn.addEventListener("click", () => {
                     location.reload();
                 });
             }
-            // console.log(whodoneit.value);
-            // console.log(withwhat.value);
-            // console.log(wherewasit.value);
-            // console.log(data.games[currentGame].game[1].outcome[0].killer);
-            // console.log(data.games[currentGame].game[1].outcome[0].weapon);
-            // console.log(data.games[currentGame].game[1].outcome[0].room);
         });
     }
-})
+});
 
+cards.addEventListener("click", () => {
+    console.log("test");
+    board.style.transform = "rotateY(180deg)";
+    controls.className = "fade-out";
+    controlsright.className = "fade-out";
+    board.className = "fade-out";
+    setTimeout(function () {
+        board.style.display = "none";
+        controls.style.display = "none";
+        controlsright.style.display = "none";
+      }, 900);
+    setTimeout(function () {
+        boardback.style.display = "block";
+        boardback.className = "fade-in";
+      }, 400);
 
+});
 
+backclose.addEventListener("click", () => {
+    controls.className = "fade-in";
+    controlsright.className = "fade-in";
+    board.className = "fade-in";
+    boardback.className = "fade-out";
+    setTimeout(function () {
+        board.style.display = "block";
+        controls.style.display = "flex";
+        controlsright.style.display = "flex";
+        board.style.transform = "none";
+      }, 400);
+    setTimeout(function () {
+        boardback.style.display = "none";
+      }, 400);
 
+});
 
-
-
-
-
-
-
-// // console.log(caesar("testing", 11))
-// pigpentest.addEventListener("click", () => {
-//     pigpen();
-// })
-
-
-// study.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// hall.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// lounge.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// library.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// cards.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// diningroom.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// billiardroom.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// conservatory.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// ballroom.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
-
-// kitchen.addEventListener("click", () => {
-//     alert("i dont surf");
-// })
+// // future Jordan's problem - completely forgot that a window must be first opened with pre-defined dimensions in order for it to be later resized
+// resizebtn.addEventListener("click", () => {
+//     window.resizeTo(
+//         window.screen.availWidth / 2,
+//         window.screen.availHeight / 2
+//       );
+// });
