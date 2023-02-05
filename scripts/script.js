@@ -58,6 +58,7 @@ let currentGame;
 let solvedClues = [];
 let activeRoom = "";
 let clueCache = [];
+let playerHue = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(0deg)";
 // remove used room
 roomArray.splice(startingRandom, 1);
 
@@ -73,6 +74,7 @@ function drawPlayer() {
     playerIcon.className = 'playerIcon';
     playerIcon.src = './images/piece2.png';
     playerIcon.style.width = '4vw';
+    playerIcon.style.filter = playerHue;
     currentRoom.appendChild(playerIcon);
 }
 
@@ -96,7 +98,8 @@ optionssubmit.addEventListener("click", () => {
         val = 334;
     }
     
-    document.getElementsByClassName('playerIcon')[0].style.filter = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(" + val + "deg)";
+    playerHue = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(" + val + "deg)";
+    document.getElementsByClassName('playerIcon')[0].style.filter = playerHue;
 });
 
 // on click check if cipher solution is correct
