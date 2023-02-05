@@ -1,0 +1,35 @@
+Data is fed by data.json, for encrypted outputs use either "caesar" or "vigenere", for custom ciphers not supported/accomodated for use "custom".
+
+caesar syntax in data.json:
+
+                    "kitchen": [
+                        "caesar",
+                        "message to be encrypted"
+                    ]
+
+output ingame will be encrypted.
+
+vigenere syntax in data.json:
+
+                    "ballroom": [
+                        "vigenere",
+                        "message to be encrypted"
+                    ]
+
+output ingame will be encrypted.
+
+custom syntax in data.json:
+
+                    "hall": [
+                        "custom",
+                        "plaintext message",
+                        "⸅⦝⅃｢⊡>□⋗> ⟄□vv⅃ꓶ□"
+                    ]
+
+For games that do not involve encryption the data.json is equally as simple:
+
+                    "ballroom": [
+                        "custom",
+                        "answer to the riddle/question",
+                        "question to ask on-screen"
+                    ]

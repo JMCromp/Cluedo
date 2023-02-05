@@ -1,3 +1,7 @@
+// code was written as quickly as possible and has undergone absolutely zero refactoring
+// plenty of clean-up work to be done when time permits, functional for now
+// this is intended as a learning tool for Code Nation learners, no other use is authorised
+
 // import ciphers
 import { caesar, pigpen, vigenere } from "./encode.js"
 // fetch data from json, store as 'data'
