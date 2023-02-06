@@ -2,8 +2,11 @@
 // plenty of clean-up work to be done when time permits, functional for now
 // this is intended as a learning tool for Code Nation learners, no other use is authorised
 
-// import ciphers
+// import ciphers - currently has support for caesar, vigenere, and pigpen though pigpen
+// was tested, and works, hasn't been implemented into the clue pop-up due to laziness
+// will incorporate at a later date - see encode.js
 import { caesar, pigpen, vigenere } from "./encode.js"
+
 // fetch data from json, store as 'data'
 let data;
 fetch("data.json")
@@ -12,7 +15,7 @@ fetch("data.json")
     })
     .then(temp => data = temp);
 
-// element references
+// element references, arguably far too many
 let board = document.getElementById("board");
 let study = document.getElementById("study");
 let hall = document.getElementById("hall");
@@ -73,7 +76,7 @@ function drawPlayer() {
     let playerIcon = document.createElement('img');
     playerIcon.className = 'playerIcon';
     playerIcon.src = './images/piece2.png';
-    playerIcon.style.width = '4vw';
+    playerIcon.style.width = '3.5vw';
     playerIcon.style.filter = playerHue;
     currentRoom.appendChild(playerIcon);
 }
@@ -81,7 +84,9 @@ function drawPlayer() {
 drawPlayer();
 
 // change player colour
-// disabled because Steff is boring
+// orginally disabled because Steff is boring
+// re-enabled because Jordan isn't
+// it is pretty pointless though...
 optionssubmit.addEventListener("click", () => {
     let val = 0;
     if (colouroptions.value == "orange") {
@@ -98,6 +103,7 @@ optionssubmit.addEventListener("click", () => {
         val = 334;
     }
     
+    // rotational hue, stored due to playerIcon being re-rendered after each move - will default to orange otherwise
     playerHue = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(" + val + "deg)";
     document.getElementsByClassName('playerIcon')[0].style.filter = playerHue;
 });
@@ -167,6 +173,7 @@ function showClue() {
         cipertext.textContent = caesar(data.games[currentGame].game[0][roomID][1], 13);
     } else if (data.games[currentGame].game[0][roomID][0] == "vigenere") {
         // syntax: vigenere.doCrypt(isDecrypt, theKey, theClue)
+        // vigenere will both encrypt and decrypt if you find the need, change bool to true for decrypt
         cipertext.textContent = vigenere.doCrypt(false, "codenation", data.games[currentGame].game[0][roomID][1]);
     } else if (data.games[currentGame].game[0][roomID][0] == "custom") {
         // accomodation for custom ciphers
@@ -175,7 +182,6 @@ function showClue() {
 
     // push clue to clueCache for later recall
     let temp = [currentRoom.id, cipertext.textContent];
-    // let temp = {"room": currentRoom.id, "clue": cipertext.textContent};
     clueCache.push(temp);
     
     // show clue box and add close
@@ -198,8 +204,6 @@ function showClue() {
 
     visitedrooms.style.display = "block";
 }
-
-
 
 movebtn.addEventListener("click", () => {
     if (roomArray.length >= 1) {
