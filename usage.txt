@@ -4,19 +4,29 @@ caesar syntax in data.json:
 
                     "kitchen": [
                         "caesar",
-                        "message to be encrypted"
+                        "message to be encrypted",
+                        13
                     ]
 
-output ingame will be encrypted.
+                    syntax: [type, decryptedClue, rotations]
+
+output ingame will be encrypted automatically.
+if not specified the default roations will always be 13.
+
 
 vigenere syntax in data.json:
 
                     "ballroom": [
                         "vigenere",
-                        "message to be encrypted"
+                        "message to be encrypted",
+                        "codenation"
                     ]
 
-output ingame will be encrypted.
+                    syntax: [type, decryptedClue, encryptionKey]
+
+output ingame will be encrypted automatically.
+if not specified the default key will always be "codenation".
+
 
 custom syntax in data.json:
 
@@ -26,10 +36,16 @@ custom syntax in data.json:
                         "⸅⦝⅃｢⊡>□⋗> ⟄□vv⅃ꓶ□"
                     ]
 
+                    syntax: [type, decryptedClue, encryptedClue]
+
+
 For games that do not involve encryption the data.json is equally as simple:
 
-                    "ballroom": [
-                        "custom",
-                        "answer to the riddle/question",
-                        "question to ask on-screen"
+                    "study": [
+                        "freeform",
+                        "What base are binary numbers (hint: base-x)",
+                        "base-2",
+                        "the culrit is male"
                     ]
+
+                    syntax: [type, question, answer, clue]

@@ -113,6 +113,10 @@
     color: rgb(0, 0, 0);
 }
 
+#overlay p {
+    padding: 0px 25px 0px 25px;
+}
+
 #overlay input {
     width: 50%;
     border: 1px solid black;
@@ -174,11 +178,16 @@
 #correct {
     border: 1px solid;
     border-radius: 20px;
-    margin: 30px 0px;
-    padding: 15px 15px 15px 15px;
+    margin: 30px 50px;
+    padding: 10px 10px 10px 10px;
     color: #4F8A10;
     background-color: #DFF2BF;
     display: none;
+}
+
+#correct p {
+    padding: 10px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 #incorrect {
@@ -703,6 +712,10 @@
         font-size: 14px;
     }
 
+    #correct p {
+        font-size: 8px;
+    }
+
     #overlay button {
         font-size: 8px;
         padding: 0px 0px 0px 0px;
@@ -777,6 +790,10 @@
         font-size: 16px;
     }
 
+    #correct p {
+        font-size: 10px;
+    }
+
     #overlay button {
         font-size: 8px;
         padding: 0px 0px 0px 0px;
@@ -845,6 +862,10 @@
 
     #overlay p {
         font-size: 18px;
+    }
+
+    #correct p {
+        font-size: 10px;
     }
 
     #overlay button {
@@ -917,6 +938,10 @@
         font-size: 20px;
     }
 
+    #correct p {
+        font-size: 12px;
+    }
+
     #overlay button {
         font-size:12px;
         width: 20%;
@@ -984,6 +1009,10 @@
         font-size: 22px;
     }
 
+    #correct p {
+        font-size: 14px;
+    }
+
     #overlay button {
         font-size:12px;
         width: 20%;
@@ -1049,6 +1078,10 @@
 
     #overlay p {
         font-size: 24px;
+    }
+
+    #correct p {
+        font-size: 14px;
     }
 
     #overlay button {

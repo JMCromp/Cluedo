@@ -48,6 +48,7 @@ let controls = document.getElementById("controls");
 let controlsright = document.getElementById("controlsright");
 let boardback = document.getElementById("boardback");
 let backclose = document.getElementById("backclose");
+let freeform = document.getElementById("freeform");
 
 let pigpentest = document.getElementById("pigpentest");
 overlay.style.display = "none";
@@ -62,6 +63,7 @@ let solvedClues = [];
 let activeRoom = "";
 let clueCache = [];
 let playerHue = "drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(0deg)";
+let hasRun;
 // remove used room
 roomArray.splice(startingRandom, 1);
 
@@ -114,7 +116,17 @@ ciphersolution.addEventListener("keypress", (e) => {
         correct.style.display = "none";
         incorrect.style.display = "none";
         // check if entered value matches original clue from data.json
-        if(ciphersolution.value == data.games[currentGame].game[0][activeRoom][1]) {
+        // initially check for freeform as it needs a different index
+        if (data.games[currentGame].game[0][activeRoom][0] == "freeform" ) {
+            var solval = 2;
+            freeform.textContent = `Clue: ${data.games[currentGame].game[0][activeRoom][3]}`;
+            freeform.style.display = "block";
+        } else {
+            var solval = 1;
+            freeform.textContent = "";
+            freeform.style.display = "none";
+        }
+        if(ciphersolution.value == data.games[currentGame].game[0][activeRoom][solval]) {
             correct.style.display = "block";
             solvedClues.push(activeRoom);
         } else {
@@ -124,6 +136,7 @@ ciphersolution.addEventListener("keypress", (e) => {
 
 });
 
+// yeah...
 function resetElements() {
     ciphersolution.readOnly = false;
     correct.style.display = "none";
@@ -141,6 +154,12 @@ function recallClue(element) {
                 for (let i = 0; i < solvedClues.length; i++) {
                     if (solvedClues[i] == element.srcElement.innerText) {
                         // show solved message
+                        // different indexing for freeform
+                        if (data.games[currentGame].game[0][activeRoom][0] == "freeform" ) {
+                            freeform.textContent = `Clue: ${data.games[currentGame].game[0][activeRoom][3]}`;
+                        } else {
+                            freeform.textContent = "";
+                        }
                         ciphersolution.value = data.games[currentGame].game[0][activeRoom][1];
                         ciphersolution.readOnly = true;
                         correct.style.display = "block";
@@ -159,10 +178,12 @@ function recallClue(element) {
 
 function showClue() {
     resetElements();
-    if (!currentGame) {
+    if (!hasRun) {
         // roll and select which game to play - calc from total listed games in data.json
         currentGame = Math.floor(Math.random() * data.games.length);
+        hasRun = true;
     }
+    console.log(currentGame);
     // get current roomID from parent ID attribute of player icon
     let roomID = document.getElementsByClassName('playerIcon')[0].parentElement.id;
     activeRoom = roomID;
@@ -170,14 +191,27 @@ function showClue() {
     // check for required cipher
     if (data.games[currentGame].game[0][roomID][0] == "caesar") {
         // syntax: caesar(string, rotation)
-        cipertext.textContent = caesar(data.games[currentGame].game[0][roomID][1], 13);
+        // default rotations will be 13 if not specified in data.json
+        if (data.games[currentGame].game[0][roomID][2] == null) {
+            cipertext.textContent = caesar(data.games[currentGame].game[0][roomID][1], 13);
+        } else {
+            cipertext.textContent = caesar(data.games[currentGame].game[0][roomID][1], data.games[currentGame].game[0][roomID][2]);
+        }
     } else if (data.games[currentGame].game[0][roomID][0] == "vigenere") {
         // syntax: vigenere.doCrypt(isDecrypt, theKey, theClue)
         // vigenere will both encrypt and decrypt if you find the need, change bool to true for decrypt
-        cipertext.textContent = vigenere.doCrypt(false, "codenation", data.games[currentGame].game[0][roomID][1]);
-    } else if (data.games[currentGame].game[0][roomID][0] == "custom") {
+        // default key will be "codenation" if not specified in data.json
+        if (data.games[currentGame].game[0][roomID][2] == null) {
+            cipertext.textContent = vigenere.doCrypt(false, "codenation", data.games[currentGame].game[0][roomID][1]);
+        } else {
+            cipertext.textContent = vigenere.doCrypt(false, data.games[currentGame].game[0][roomID][2], data.games[currentGame].game[0][roomID][1]);     
+        }
+    } else if (data.games[currentGame].game[0][roomID][0] == "custom" ) {
         // accomodation for custom ciphers
         cipertext.textContent = data.games[currentGame].game[0][roomID][2];
+    } else if (data.games[currentGame].game[0][roomID][0] == "freeform" ) {
+        // accomodation for freeform games
+        cipertext.textContent = data.games[currentGame].game[0][roomID][1];
     }
 
     // push clue to clueCache for later recall
@@ -205,6 +239,7 @@ function showClue() {
     visitedrooms.style.display = "block";
 }
 
+// randomly select a previously unselected room to move to on each press, if all rooms visited show the "end game" options and set-up event listener to check responses
 movebtn.addEventListener("click", () => {
     if (roomArray.length >= 1) {
         let random = Math.floor(Math.random() * roomArray.length);
@@ -221,6 +256,7 @@ movebtn.addEventListener("click", () => {
                 ciphersolution.style.display = "none";
                 closebtn.textContent = "Play again";
                 closebtn.addEventListener("click", () => {
+                    // worlds laziest solution...
                     location.reload();
                 });
             }
@@ -228,6 +264,8 @@ movebtn.addEventListener("click", () => {
     }
 });
 
+// how-to/help trigger, nothing fancy - apply classes to trigger animations
+// needs cleaning up, far from DRY
 cards.addEventListener("click", () => {
     console.log("test");
     board.style.transform = "rotateY(180deg)";
@@ -246,6 +284,8 @@ cards.addEventListener("click", () => {
 
 });
 
+// close button from the help menu, nothing fancy - apply classes to trigger animations
+// needs cleaning up, far from DRY
 backclose.addEventListener("click", () => {
     controls.className = "fade-in";
     controlsright.className = "fade-in";
