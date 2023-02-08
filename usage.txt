@@ -45,7 +45,7 @@ For games that do not involve encryption the data.json is equally as simple:
                         "freeform",
                         "What base are binary numbers (hint: base-x)",
                         "base-2",
-                        "the culrit is male"
+                        "the culprit is male"
                     ]
 
                     syntax: [type, question, answer, clue]
