@@ -38,7 +38,6 @@ function pigpen() {
 
 "use strict";
 
-
 const vigenere = new function() {
 	
 	// /* 
@@ -106,7 +105,6 @@ const vigenere = new function() {
 		return result;
 	}
 	
-	
 	// Tests whether the given character code is a Latin letter.
 	function isLetter(c) {
 		return isUppercase(c) || isLowercase(c);
@@ -123,7 +121,5 @@ const vigenere = new function() {
 	}
 	
 };
-
-
 
 export { caesar, pigpen, vigenere }

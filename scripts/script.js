@@ -1,5 +1,5 @@
 // code was written as quickly as possible and has undergone absolutely zero refactoring
-// plenty of clean-up work to be done when time permits, functional for now
+// plenty of clean-up work to be done when time permits, functional for now, far from DRY
 // this is intended as a learning tool for Code Nation learners, no other use is authorised
 
 // import ciphers - currently has support for caesar, vigenere, and pigpen though pigpen
